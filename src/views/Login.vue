@@ -8,11 +8,11 @@
       <div class="inputs">
         <input
           ref="username"
-          type="username"
+          v-model="username"
           class="form-control"
+          type="username"
           id="username"
           placeholder="Username"
-          v-model="username"
         />
         <input
           type="password"
@@ -25,7 +25,13 @@
 
       <div class="actions d-flex justify-content-between">
         <button type="submit" class="btn btn-primary">Login</button>
-        <button type="button" class="btn btn-outline-warning" @click="regiserPage">Register</button>
+        <button
+          type="button"
+          class="btn btn-outline-warning"
+          @click="regiserPage"
+        >
+          Register
+        </button>
       </div>
     </form>
   </div>
@@ -37,7 +43,7 @@ export default {
   data() {
     return {
       username: "",
-      password: ""
+      password: "",
     };
   },
 
@@ -50,16 +56,29 @@ export default {
       e.preventDefault();
       e.stopPropagation();
 
-      console.log("submit login form", "add validation");
-      console.log(this.$data);
+      this.$axios
+        .get("https://api.coindesk.com/v1/bpi/currentprice.json")
+        .then((response) => response.data)
+        .then((data) => {
+          return data;
+        })
+        .then((d) => {
+          this.$router.push({
+            path: "/chat",
+            query: {
+              data: Object.assign({}, d),
+            },
+          });
+        })
+        .catch((err) => console.log(err));
     },
 
     regiserPage() {
       this.$router.push({
-        path: "/register"
+        path: "/register",
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
