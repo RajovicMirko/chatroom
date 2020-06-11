@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>This is Login page</h1>
+    <h1>This is {{this.$router.history.current.name}} page</h1>
   </div>
 </template>
 

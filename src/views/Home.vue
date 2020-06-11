@@ -1,6 +1,6 @@
 <template>
-  <div class="home">
-    <h1>This is Home page</h1>
+  <div class="home bg-primary">
+    <h1>This is {{this.$router.history.current.name}} page</h1>
   </div>
 </template>
 
