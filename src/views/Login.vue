@@ -12,14 +12,14 @@
           class="form-control"
           id="username"
           placeholder="Username"
-          v-model="loginData.username"
+          v-model="username"
         />
         <input
           type="password"
           class="form-control"
           id="password"
           placeholder="Password"
-          v-model="loginData.password"
+          v-model="password"
         />
       </div>
 
@@ -36,10 +36,8 @@ export default {
   name: "Login",
   data() {
     return {
-      loginData: {
-        username: "",
-        password: ""
-      }
+      username: "",
+      password: ""
     };
   },
 
@@ -50,8 +48,10 @@ export default {
   methods: {
     submitForm(e) {
       e.preventDefault();
-      console.log("submit login form");
-      console.log(this.loginData);
+      e.stopPropagation();
+
+      console.log("submit login form", "add validation");
+      console.log(this.$data);
     },
 
     regiserPage() {
