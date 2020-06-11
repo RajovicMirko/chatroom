@@ -1,5 +1,5 @@
 <template>
-  <div class="home bg-primary">
+  <div class="home">
     <h1>This is {{this.$router.history.current.name}} page</h1>
   </div>
 </template>

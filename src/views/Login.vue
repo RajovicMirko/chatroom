@@ -25,7 +25,7 @@
 
       <div class="actions d-flex justify-content-between">
         <button type="submit" class="btn btn-primary">Login</button>
-        <button type="button" class="btn btn-secondary" @click="regiserPage">Register</button>
+        <button type="button" class="btn btn-outline-warning" @click="regiserPage">Register</button>
       </div>
     </form>
   </div>
