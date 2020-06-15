@@ -1,5 +1,5 @@
 <template>
-  <div class="chat d-flex">
+  <div class="chat">
     <div class="drawer bg-primary"></div>
     <div class="messages">Test message</div>
   </div>
@@ -13,28 +13,23 @@ export default {
 
 <style>
 .chat {
+  position: relative;
+  display: flex;
   overflow: hidden;
 }
 
 .drawer {
   position: relative;
-  min-width: 300px;
-  max-width: 300px;
-  left: 0;
-  transition: left 0.5s cubic-bezier(0.82, 0.085, 0.395, 0.895);
-  overflow: hidden;
+  flex: 1.3;
+  transition: all 0.5s ease-out;
 }
 
-.drawer-closed {
-  position: relative;
-  left: -300px;
-  display: hidden;
-  overflow: hidden;
+.drawer.closed {
+  flex: 0;
 }
 
 .messages {
   padding: 1rem 1rem 0 1rem;
-  flex: 1;
-  overflow: hidden;
+  flex: 5;
 }
 </style>

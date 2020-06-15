@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <!-- Drawer control -->
-    <span class="drawer-btn navbar-toggler-icon" @click="drawerControl"></span>
+    <span class="drawer-btn navbar-toggler-icon" @click="drawerControl" v-if="pageName === 'Chat'"></span>
 
     <!-- Brand -->
     <router-link class="navbar-brand" to="/">
@@ -44,10 +44,16 @@ export default {
     };
   },
 
+  computed: {
+    pageName() {
+      return this.$router.currentRoute.name;
+    }
+  },
+
   methods: {
     drawerControl() {
       const drawer = document.querySelector(".drawer");
-      drawer.classList.toggle("drawer-closed");
+      drawer.classList.toggle("closed");
     }
   }
 };
