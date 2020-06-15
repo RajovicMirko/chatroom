@@ -1,11 +1,11 @@
 <template>
   <div class="login container d-flex justify-content-center align-items-center">
-    <form class="login-form" @submit="submitForm">
+    <form class="form-def" @submit="submitForm">
       <div class="title text-center">
         <h2>Chat login</h2>
       </div>
 
-      <div class="inputs">
+      <div class="form-inputs">
         <input
           ref="username"
           v-model="username"
@@ -25,13 +25,7 @@
 
       <div class="actions d-flex justify-content-between">
         <button type="submit" class="btn btn-primary">Login</button>
-        <button
-          type="button"
-          class="btn btn-outline-warning"
-          @click="regiserPage"
-        >
-          Register
-        </button>
+        <button type="button" class="btn btn-outline-warning" @click="regiserPage">Register</button>
       </div>
     </form>
   </div>
@@ -43,7 +37,7 @@ export default {
   data() {
     return {
       username: "",
-      password: "",
+      password: ""
     };
   },
 
@@ -58,42 +52,28 @@ export default {
 
       this.$axios
         .get("https://api.coindesk.com/v1/bpi/currentprice.json")
-        .then((response) => response.data)
-        .then((data) => {
+        .then(response => response.data)
+        .then(data => {
           return data;
         })
-        .then((d) => {
-          this.$router.push({
-            path: "/chat",
-            query: {
-              data: Object.assign({}, d),
-            },
-          });
+        .then(d => {
+          d;
+          this.$router.push("/chat");
+          // this.$router.push({
+          //   path: "/chat",
+          //   query: {
+          //     data: Object.assign({}, d)
+          //   }
+          // });
         })
-        .catch((err) => console.log(err));
+        .catch(err => console.log(err));
     },
 
     regiserPage() {
       this.$router.push({
-        path: "/register",
+        path: "/register"
       });
-    },
-  },
+    }
+  }
 };
 </script>
-
-<style>
-.login {
-  /* Solve full height problem */
-  /* height: 100vh; */
-}
-
-.login-form {
-  width: 350px;
-}
-
-.login-form .inputs input {
-  margin-bottom: 1rem;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
-}
-</style>

@@ -1,11 +1,11 @@
 <template>
   <div class="register container d-flex justify-content-center align-items-center">
-    <form class="register-form" @submit="submitForm">
+    <form class="form-def" @submit="submitForm">
       <div class="title text-center">
         <h2>Chat registration</h2>
       </div>
 
-      <div class="inputs">
+      <div class="form-inputs">
         <input
           ref="username"
           type="username"
@@ -66,17 +66,4 @@ export default {
 </script>
 
 <style>
-.register {
-  /* Solve full height problem */
-  /* height: 100vh; */
-}
-
-.register-form {
-  width: 350px;
-}
-
-.register-form .inputs input {
-  margin-bottom: 1rem;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
-}
 </style>

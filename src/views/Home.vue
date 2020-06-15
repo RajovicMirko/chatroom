@@ -1,6 +1,9 @@
 <template>
-  <div class="home">
-    <h1>This is {{this.$router.history.current.name}} page</h1>
+  <div class="home position-center">
+    <div class="container position-center">
+      <img src="../assets/chatLogo.svg" alt class="m-4" style="width: 100px; height: 100px;" />
+      <h1>Welcome to ChatManiac</h1>
+    </div>
   </div>
 </template>
 
@@ -11,4 +14,9 @@ export default {
 </script>
 
 <style>
+.position-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 </style>

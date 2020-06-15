@@ -1,5 +1,8 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Drawer control -->
+    <span class="drawer-btn navbar-toggler-icon" @click="drawerControl"></span>
+
     <!-- Brand -->
     <router-link class="navbar-brand" to="/">
       <img src="../assets/chatLogo.svg" width="30" height="30" alt loading="lazy" />
@@ -39,9 +42,27 @@ export default {
     return {
       routes: this.$router.options.routes.filter(route => route.path !== "/")
     };
+  },
+
+  methods: {
+    drawerControl() {
+      const drawer = document.querySelector(".drawer");
+      drawer.classList.toggle("drawer-closed");
+    }
   }
 };
 </script>
 
 <style>
+.navbar {
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.1);
+}
+
+.drawer-btn {
+  margin-right: 1rem;
+}
+
+.drawer-btn:hover {
+  cursor: pointer;
+}
 </style>
