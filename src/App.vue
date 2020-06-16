@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="d-flex flex-column">
-    <Navigation />
+    <Navigation :pageName="pageName" />
     <router-view style="flex: 1" />
   </div>
 </template>
@@ -9,7 +9,18 @@
 import Navigation from "./components/Navigation";
 export default {
   name: "App",
-  components: { Navigation }
+
+  components: { Navigation },
+
+  data() {
+    return {
+      pageName: ""
+    };
+  },
+
+  beforeUpdate() {
+    this.pageName = this.$router.currentRoute.name;
+  }
 };
 </script>
 

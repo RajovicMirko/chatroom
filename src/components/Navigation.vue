@@ -38,16 +38,17 @@
 
 <script>
 export default {
+  props: {
+    pageName: {
+      type: String,
+      required: true
+    }
+  },
+
   data() {
     return {
       routes: this.$router.options.routes.filter(route => route.path !== "/")
     };
-  },
-
-  computed: {
-    pageName() {
-      return this.$router.currentRoute.name;
-    }
   },
 
   methods: {
