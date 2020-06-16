@@ -28,18 +28,6 @@ export default {
         { id: 2, name: "Ime 2", status: "offline", messages: [] },
         { id: 3, name: "Ime 3", status: "", messages: [] },
         { id: 4, name: "Ime 4", status: "", messages: [] },
-        { id: 5, name: "Ime 5", status: "", messages: [] },
-        { id: 2, name: "Ime 2", status: "offline", messages: [] },
-        { id: 3, name: "Ime 3", status: "", messages: [] },
-        { id: 4, name: "Ime 4", status: "", messages: [] },
-        { id: 5, name: "Ime 5", status: "", messages: [] },
-        { id: 2, name: "Ime 2", status: "offline", messages: [] },
-        { id: 3, name: "Ime 3", status: "", messages: [] },
-        { id: 4, name: "Ime 4", status: "", messages: [] },
-        { id: 5, name: "Ime 5", status: "", messages: [] },
-        { id: 2, name: "Ime 2", status: "offline", messages: [] },
-        { id: 3, name: "Ime 3", status: "", messages: [] },
-        { id: 4, name: "Ime 4", status: "", messages: [] },
         { id: 5, name: "Ime 5", status: "", messages: [] }
       ]
     };
