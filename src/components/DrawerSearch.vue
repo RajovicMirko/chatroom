@@ -5,7 +5,8 @@
       class="form-control"
       placeholder="Search"
       aria-describedby="basic-addon1"
-      @keypress="handleKeypress"
+      :value="query"
+      @input="$emit('update:query', $event.target.value)"
     />
     <div class="input-group-prepend d-flex justify-content-center align-items-center p-2">
       <i class="fas fa-search"></i>
@@ -15,11 +16,10 @@
 
 <script>
 export default {
-  methods: {
-    handleKeypress(e) {
-      if (e.keyCode === 13) {
-        console.log("Submit", e.target.value);
-      }
+  props: {
+    query: {
+      type: String,
+      required: true
     }
   }
 };
