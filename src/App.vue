@@ -1,20 +1,17 @@
 <template>
   <div id="app" class="d-flex flex-column">
-    <Navigation :pageName="pageName" />
+    <component :is="$getComponent('Navigation')" :pageName="pageName"></component>
     <router-view style="flex: 1" />
   </div>
 </template>
 
 <script>
-import Navigation from "./components/Navigation";
 export default {
   name: "App",
 
-  components: { Navigation },
-
   data() {
     return {
-      pageName: ""
+      pageName: this.$router.currentRoute.name
     };
   },
 

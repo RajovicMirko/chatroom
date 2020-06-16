@@ -1,6 +1,9 @@
 <template>
   <div class="chat">
-    <div class="drawer bg-primary"></div>
+    <div class="drawer bg-primary">
+      <component :is="$getComponent('Drawersearch')"></component>
+      <component :is="$getComponent('Drawerlist')"></component>
+    </div>
     <div class="messages">Test message</div>
   </div>
 </template>
@@ -15,21 +18,41 @@ export default {
 .chat {
   position: relative;
   display: flex;
-  overflow: hidden;
 }
 
 .drawer {
   position: relative;
-  flex: 1.3;
-  transition: all 0.5s ease-out;
+  min-width: 350px;
+  max-width: 350px;
+  transition: all 0.2s ease-out;
+}
+
+@media only screen and (max-width: 1024px) {
+  .drawer {
+    min-width: 250px;
+    max-width: 250px;
+  }
+}
+
+@media only screen and (max-width: 759px) {
+  .drawer {
+    min-width: 70px;
+    max-width: 70px;
+  }
 }
 
 .drawer.closed {
-  flex: 0;
+  min-width: 0;
+  max-width: 0;
+}
+
+.drawer.closed > * {
+  min-width: 0;
+  max-width: 0;
+  display: none;
 }
 
 .messages {
   padding: 1rem 1rem 0 1rem;
-  flex: 5;
 }
 </style>
