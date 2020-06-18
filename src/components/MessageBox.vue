@@ -16,8 +16,16 @@ export default {
   data() {
     return {
       messages: [
-        { text: "Test message text", type: "send" },
-        { text: "Test message text", type: "recived" },
+        {
+          text:
+            "Test message text Test message text Test message text Test message text Test message text Test message text Test message text",
+          type: "send"
+        },
+        {
+          text:
+            "Test message text Test message text Test message text Test message text Test message text Test message text Test message text",
+          type: "recived"
+        },
         { text: "Test message text", type: "send" },
         { text: "Test message text", type: "recived" },
         { text: "Test message text", type: "send" },
