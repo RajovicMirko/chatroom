@@ -1,5 +1,5 @@
 <template>
-  <div class="input-group mt-2 mb-2 bg-secondary text-white">
+  <div class="search-form input-group mt-2 mb-2 bg-secondary text-white">
     <input
       type="text"
       class="form-control"
@@ -34,7 +34,7 @@ export default {
   border-radius: 0;
 }
 
-.form-control:focus {
+.search-form .form-control:focus {
   border: 2px solid rgb(236, 233, 4);
 }
 </style>

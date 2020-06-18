@@ -4,7 +4,10 @@
       <component :is="$getComponent('Drawersearch')" :query.sync="query"></component>
       <component :is="$getComponent('Drawerlist')" :contacts="search"></component>
     </div>
-    <div class="messages">Test message</div>
+    <div class="messages">
+      <component :is="$getComponent('Messagebox')"></component>
+      <component :is="$getComponent('MessageInput')"></component>
+    </div>
   </div>
 </template>
 
@@ -90,6 +93,9 @@ export default {
 }
 
 .messages {
-  padding: 1rem 1rem 0 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem 0.5rem 0 0.5rem;
 }
 </style>
