@@ -4,6 +4,7 @@ import Drawerlist from "./DrawerList";
 import Messagebox from "./MessageBox";
 import MessageInput from "./MessageInput";
 import SingleMessage from "./SingleMessage";
+import UserBanner from "./UserBanner";
 
 const components = {
   Navigation,
@@ -12,6 +13,7 @@ const components = {
   Messagebox,
   MessageInput,
   SingleMessage,
+  UserBanner,
 };
 
 export const getComponent = (componentName) => {

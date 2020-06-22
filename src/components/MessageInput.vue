@@ -30,7 +30,7 @@ export default {
 }
 
 .messages .msg-input button {
-  margin: 0 0 0 0.3rem;
+  margin: 0 0 0.3rem 0.3rem;
 }
 
 .messages .msg-input > input {

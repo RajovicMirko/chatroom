@@ -54,7 +54,7 @@ export default {
         { text: "Test message text", type: "send" },
         { text: "Test message text", type: "send" },
         { text: "Test message text", type: "send" },
-        { text: "Test message text", type: "send" }
+        { text: "Last message text", type: "send" }
       ]
     };
   }
@@ -63,14 +63,14 @@ export default {
 
 <style >
 .messages .box {
-  height: 100%;
+  /* height: 100%; */
+  padding: 0.5rem 1rem;
 }
 
 .messages .box .message-list {
   display: flex;
 }
-
-.messages .box .list-group .list-group-item {
-  /* border: 0; */
+.messages .box .message-list::-webkit-scrollbar {
+  display: none;
 }
 </style>

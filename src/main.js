@@ -9,6 +9,9 @@ Vue.prototype.$axios = axios;
 import { getComponent } from "./components/componentMap";
 Vue.prototype.$getComponent = getComponent;
 
+import { getInitialFromName } from "./jsHelpers/getInitials";
+Vue.prototype.$getInitialFromName = getInitialFromName;
+
 Vue.config.productionTip = false;
 
 new Vue({

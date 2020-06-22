@@ -54,7 +54,7 @@ export default {
 }
 
 #msg.recived {
-  background-color: rgba(0, 123, 255, 1);
+  background-color: rgb(23, 162, 184);
   color: rgb(255, 255, 255);
 }
 

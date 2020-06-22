@@ -9,7 +9,7 @@
       >
         <div class="avatar d-flex justify-content-center align-items-center">
           <img v-if="contact.img" :src="contact.img" alt :class="contact.status" />
-          <span v-else :class="contact.status">{{getInitialFromName(contact.name)}}</span>
+          <span v-else :class="contact.status">{{$getInitialFromName(contact.name)}}</span>
         </div>
         <div class="content-list-item">
           <span class="name">{{contact.name}}</span>
@@ -32,13 +32,6 @@ export default {
   },
 
   methods: {
-    getInitialFromName(name) {
-      const nameArr = name.split(" ");
-      let initial = "DD";
-      if (name) initial = nameArr[0][0] + nameArr[nameArr.length - 1][0];
-      return initial.toUpperCase();
-    },
-
     handleContactClick(contact) {
       console.log(contact.id);
     }
