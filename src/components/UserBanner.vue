@@ -10,7 +10,7 @@
       </div>
     </div>
 
-    <div class="user2">
+    <div class="user2" v-if="userTwo.id">
       <div class="avatar d-flex justify-content-center align-items-center">
         <img v-if="userTwo.img" :src="userTwo.img" alt :class="userTwo.status" />
         <span v-else :class="userTwo.status">{{$getInitialFromName(userTwo.name)}}</span>
@@ -19,6 +19,12 @@
         <span class="name">{{userTwo.name}}</span>
       </div>
     </div>
+
+    <!-- <div class="user2" v-else>
+      <div class="content-list-item">
+        <span class="name">Select user to chat</span>
+      </div>
+    </div>-->
   </div>
 </template>
 

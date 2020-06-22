@@ -33,7 +33,7 @@ export default {
 
   methods: {
     handleContactClick(contact) {
-      console.log(contact.id);
+      this.$emit("userToView", contact.id);
     }
   }
 };
@@ -46,6 +46,10 @@ export default {
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
   overflow: hidden;
+}
+
+.list-group::-webkit-scrollbar {
+  display: none;
 }
 
 .list-group .list-group-item {

@@ -1,6 +1,6 @@
 <template>
   <div class="box">
-    <ul class="message-list list-group overflow-auto" ref="msgContainer">
+    <ul class="message-list list-group overflow-auto" ref="msgContainer" v-if="messages.length">
       <component
         :is="$getComponent('SingleMessage')"
         v-for="(message, i) in messages"
@@ -8,6 +8,8 @@
         :msg="message"
       ></component>
     </ul>
+
+    <div v-else class="no-user-selected" ref="msgContainer">Select user to chat</div>
   </div>
 </template>
 
@@ -44,7 +46,7 @@ export default {
 <style >
 .messages .box {
   height: 86%;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem 0 1rem;
 }
 
 .messages .box .message-list {
@@ -53,5 +55,11 @@ export default {
 }
 .messages .box .message-list::-webkit-scrollbar {
   display: none;
+}
+
+.no-user-selected {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
 }
 </style>
