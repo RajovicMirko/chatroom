@@ -5,6 +5,7 @@
         class="list-group-item list-group-item-action d-flex align-items-center"
         v-for="(contact, i) in contacts"
         :key="i"
+        :class="{'active-user': contact.id === userTwo.id}"
         @click="handleContactClick(contact)"
       >
         <div class="avatar d-flex justify-content-center align-items-center">
@@ -13,7 +14,7 @@
         </div>
         <div class="content-list-item">
           <span class="name">{{contact.name}}</span>
-          <small>Text poslednje poruke...</small>
+          <small class="last-msg-text">Text poslednje poruke...</small>
         </div>
       </li>
     </ul>
@@ -27,6 +28,10 @@ export default {
   props: {
     contacts: {
       type: Array,
+      required: true
+    },
+    userTwo: {
+      type: Object,
       required: true
     }
   },
@@ -107,8 +112,19 @@ export default {
   }
 }
 
-/* .list-group .list-group-item:hover {
-  background-color: rgba(255, 255, 255, 0.5);
+.active-user {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.active-user > * {
   color: white !important;
-} */
+}
+
+.active-user .last-msg-text {
+  color: white;
+}
+
+.active-user:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
 </style>

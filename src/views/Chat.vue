@@ -2,7 +2,12 @@
   <div class="chat">
     <div class="drawer bg-info">
       <component :is="$getComponent('Drawersearch')" :query.sync="query"></component>
-      <component :is="$getComponent('Drawerlist')" :contacts="search" @userToView="userToView"></component>
+      <component
+        :is="$getComponent('Drawerlist')"
+        :contacts="search"
+        :userTwo="userTwo"
+        @userToView="userToView"
+      ></component>
     </div>
     <div class="messages">
       <component :is="$getComponent('UserBanner')" :user="user" :userTwo="userTwo"></component>
