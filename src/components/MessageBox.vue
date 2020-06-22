@@ -45,7 +45,7 @@ export default {
 
 <style >
 .messages .box {
-  height: 86%;
+  height: 87%;
   padding: 0.5rem 1rem 0 1rem;
 }
 
