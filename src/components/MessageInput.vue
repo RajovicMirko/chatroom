@@ -31,8 +31,10 @@ export default {
     },
 
     handleSendMessage() {
-      this.$emit("sendMessage", this.messageText);
-      this.messageText = "";
+      if (this.messageText) {
+        this.$emit("sendMessage", this.messageText);
+        this.messageText = "";
+      }
     }
   }
 };
@@ -41,6 +43,7 @@ export default {
 <style>
 .messages .msg-input {
   display: flex;
+  margin: 0 0.5rem;
 }
 
 .messages .msg-input button {
