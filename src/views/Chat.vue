@@ -6,8 +6,8 @@
     </div>
     <div class="messages">
       <component :is="$getComponent('UserBanner')" :user="user" :userTwo="userTwo"></component>
-      <component :is="$getComponent('Messagebox')"></component>
-      <component :is="$getComponent('MessageInput')"></component>
+      <component :is="$getComponent('Messagebox')" :messages="messages"></component>
+      <component :is="$getComponent('MessageInput')" @sendMessage="handleSendMessage"></component>
     </div>
   </div>
 </template>
@@ -36,6 +36,48 @@ export default {
         { id: 3, name: "Ime 3", status: "offline", messages: [] },
         { id: 4, name: "Ime 4", status: "offline", messages: [] },
         { id: 5, name: "Ime 5", status: "offline", messages: [] }
+      ],
+
+      messages: [
+        {
+          text:
+            "Test message text Test message text Test message text Test message text Test message text Test message text Test message text",
+          type: "send"
+        },
+        {
+          text:
+            "Test message text Test message text Test message text Test message text Test message text Test message text Test message text",
+          type: "recived"
+        },
+        { text: "Test message text", type: "send" },
+        { text: "Test message text", type: "recived" },
+        { text: "Test message text", type: "send" },
+        { text: "Test message text", type: "recived" },
+        { text: "Test message text", type: "send" },
+        { text: "Test message text", type: "send" },
+        { text: "Test message text", type: "send" },
+        { text: "Test message text", type: "recived" },
+        { text: "Test message text", type: "recived" },
+        { text: "Test message text", type: "recived" },
+        { text: "Test message text", type: "send" },
+        { text: "Test message text", type: "recived" },
+        { text: "Test message text", type: "recived" },
+        { text: "Test message text", type: "send" },
+        { text: "Test message text", type: "recived" },
+        { text: "Test message text", type: "send" },
+        { text: "Test message text", type: "send" },
+        { text: "Test message text", type: "recived" },
+        { text: "Test message text", type: "send" },
+        { text: "Test message text", type: "recived" },
+        { text: "Test message text", type: "send" },
+        { text: "Test message text", type: "recived" },
+        { text: "Test message text", type: "send" },
+        { text: "Test message text", type: "recived" },
+        { text: "Test message text", type: "recived" },
+        { text: "Test message text", type: "send" },
+        { text: "Test message text", type: "send" },
+        { text: "Test message text", type: "send" },
+        { text: "Last message text", type: "send" }
       ]
     };
   },
@@ -53,6 +95,13 @@ export default {
               .indexOf(queryLower.toLowerCase()) > -1
         );
       }
+    }
+  },
+
+  methods: {
+    handleSendMessage(value) {
+      const msgTemplate = { text: value, type: "send" };
+      this.messages.push(msgTemplate);
     }
   }
 };

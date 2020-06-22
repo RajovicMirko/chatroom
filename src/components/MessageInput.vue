@@ -7,8 +7,9 @@
       type="text"
       id="messageText"
       placeholder="Message Text"
+      @keypress="handleInput"
     />
-    <button type="button" class="btn btn-outline-primary">
+    <button type="button" class="btn btn-outline-primary" @click="handleSendMessage">
       <i class="far fa-paper-plane"></i>
     </button>
   </div>
@@ -20,6 +21,19 @@ export default {
     return {
       messageText: ""
     };
+  },
+
+  methods: {
+    handleInput(e) {
+      if (e.keyCode === 13) {
+        this.handleSendMessage();
+      }
+    },
+
+    handleSendMessage() {
+      this.$emit("sendMessage", this.messageText);
+      this.messageText = "";
+    }
   }
 };
 </script>
