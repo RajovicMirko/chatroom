@@ -45,9 +45,13 @@ export default {
 </script>
 
 <style>
+.drawer-list {
+  margin-top: 1rem;
+}
+
 .list-group {
   padding: 0 5px;
-  height: 825px;
+  height: 800px;
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
   overflow: hidden;

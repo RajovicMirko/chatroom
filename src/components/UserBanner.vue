@@ -50,6 +50,8 @@ export default {
   display: flex;
   justify-content: space-between;
   flex-direction: row-reverse;
+  border-radius: 0;
+  padding: 0.1rem;
 }
 
 .badge .user {

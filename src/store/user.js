@@ -55,7 +55,7 @@ const state = {
       {
         id: 4,
         name: "Ime 4",
-        status: "offline",
+        status: "online",
         messages: [
           { text: "Test message from user Ime 4", type: "recived" },
           { text: "Test message from user Ime 4", type: "recived" },
